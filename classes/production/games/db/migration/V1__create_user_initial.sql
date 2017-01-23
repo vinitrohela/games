@@ -1,4 +1,4 @@
-CREATE TABLE `user_info` (
+CREATE TABLE `blackjack`.`user_info` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `version` INT NULL DEFAULT 0,
   `name` VARCHAR(45) NOT NULL,

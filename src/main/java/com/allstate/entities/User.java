@@ -1,6 +1,8 @@
 package com.allstate.entities;
 
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -14,6 +16,18 @@ public class User {
     private int balance;
     private Date created;
     private Date modified;
+
+    public User() {
+    }
+
+    public User(String name) {
+        this.name = name;
+    }
+
+    public User(String name, int balance) {
+        this.name = name;
+        this.balance = balance;
+    }
 
     @Id
     @GeneratedValue
@@ -47,18 +61,18 @@ public class User {
         this.balance = balance;
     }
 
+    @CreationTimestamp
     public Date getCreated() {
         return created;
     }
-
     public void setCreated(Date created) {
         this.created = created;
     }
 
+    @UpdateTimestamp
     public Date getModified() {
         return modified;
     }
-
     public void setModified(Date modified) {
         this.modified = modified;
     }
